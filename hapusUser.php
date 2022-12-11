@@ -1,0 +1,1 @@
+<?php include 'fungsi/config-login.php'; cekPunyaKomen($_GET['id']); echo "<meta http-equiv='refresh' content='1;url=admin-dashboard.php'>"; ?>

@@ -1,0 +1,1250 @@
+:root {
+  --gradient: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+:root {
+  --body: #293241;
+  --dominan: #47b2e4;
+  --dominan-hover: #6bc1e9;
+  --white: #fff;
+  --border-tombol: #47b2e4;
+  --header-tulisan-hover: #3d5a80;
+  --bayangan-dropdown: rgba(127, 137, 161, 0.25);
+  --judul-section: #37517e;
+
+  --sectoin-garis: #ddd;
+
+  --primary-color: #2e6185;
+  --text-p: #27496d;
+  --primary-color-scroll: #0491b1;
+  --hover: #607eaa;
+  --hover-active: #b4cdf3;
+  --white: #fff;
+  --border-button: #3e7fae;
+  --shadow: #aebdca;
+  --line-section: #ddd;
+  --footer-p: #5e5e5e;
+  --list-footer: #777777;
+  --tion: #d9ac35;
+  --section-bg: #f3f5fa;
+  --hover-icon: #fcb12e;
+  --biru-muda: #2bacc7;
+  --desc: #000000;
+}
+
+:root {
+  --firstfont: "Open Sans", sans-serif;
+  --secondfont: "Jost", sans-serif;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------
+# [DONE] General - style yang ada di tag body, a, dan h1-h6
+----------------------------------------------------------------------------------------------------------------------*/
+body {
+  font-family: var(--firstfont); /* Font 1 - Open Sans*/
+  color: var(--body); /* Warna 1 - Warna tulisan keterangan <p> */
+}
+
+a {
+  color: var(--primary-color); /* Warna 2 - Warna tulisan sub judul <a> */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+  /* Warna 3 - Perubahan warna pada tulisan jika mouse ada di atas tulisannya (saya liat di F.A.Q ketika 1 question
+  diketik dan cursornya dipada tulisannya, dan perubahan tulisan itulah yang terjadi pada syntax ini) */
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondfont); /* Font 2 - Josh*/
+}
+
+/*--------------------------------------------------------------------------------------------------------------------
+# [DONE] Preloader - Pas buka websitenya, ada tampilan loading
+----------------------------------------------------------------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #4dcaf0;
+  background: -webkit-radial-gradient(right, #4dcaf0, #274a6d);
+  background: -moz-radial-gradient(right, #4dcaf0, #274a6d);
+  background: radial-gradient(to left, #4dcaf0, #274a6d);
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid var(--primary-color); /* Warna object laoding yang ada di tengah tengah (yang berputar-putar itu) */
+  border-top-color: var(--white);
+  border-bottom-color: var(--white);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------
+# [DONE] Back to Top - Buat scroll otomatis ke atas (kayaknya ga bakalan di gunain)
+----------------------------------------------------------------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 24px;
+  color: var(--white);
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: var(--hover);
+  color: var(--white);
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------
+# [DONE] Header
+--------------------------------------------------------------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 12px 0; /* Padding Header */
+}
+
+#header.header-scrolled, /* Supaya headernya ikut (Header scroll) pas di scroll */
+#header.header-inner-pages {
+  /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  background: #2e6185;
+}
+
+#header .logo {
+  font-size: 18px; /* Ukuran/Size Judul Website */
+  margin: 0;
+  padding: 0;
+  /* line-height: 1; */
+  font-weight: 600; /* 600 = Semi bold */
+  letter-spacing: 1px; /* Jarak antar huruf di judul website (2px) */
+  text-transform: capitalize; /* Format judul website kapital */
+}
+
+#header .logo a {
+  color: var(--white); /* Warna [judul website]*/
+  padding: 0 0 0 0; /* Padding judul website*/
+}
+
+#header .logo img {
+  max-height: 40px; /* Ukuran maksimal gambar logo [ukuran logo] 40px*/
+  padding: 0 12px 0 0;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------
+# [DONE] Navigation Menu
+--------------------------------------------------------------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  /* style dari objek akan berubah jika objeknya di klik */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 12px;
+  margin-left: 5px;
+  font-size: 16px; /* ukuran tulisan */
+  font-weight: 500; /* ketebalan tulisan, 500 = Medium mendekati semi bold */
+  color: var(--white); /* warna tulisan pada navbar (normal/ketika tidak di apa apain)*/
+  white-space: nowrap;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  /* ukuran panah bawah dropdwown */
+  font-size: 16px;
+  line-height: 0;
+  margin-left: 4px; /* Jarak panah bawah ke tulisan sebelah kiri nya */
+}
+
+.navbar a:hover, /* style dari objek akan berubah jika mouse ada di objeknya (tidak di klik)*/
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: var(--hover); /* Warna dari tulisan pada navbar/menu berubah jika mouse ada di tulisannya (tidak di klik) */
+  background: var(--white);
+}
+
+.navbar .getstarted, /* tombol get started */
+.navbar .getstarted:focus {
+  padding: 6px 20px;
+  margin-left: 12px; /* jarak tombol/button get started ke tulisan sebelah kiri */
+  border-radius: 20px; /* border radius dari tombol get started */
+  color: var(--white); /* Warna tulisan get started */
+  font-size: 16px; /* Ukuran tulisan get started */
+  border: 2px solid var(--border-button); /* Warna border get started */
+  font-weight: 600; /* Ketebalan tulisan get started */
+}
+
+.navbar .getstarted:hover,
+.navbar .getstarted:focus:hover {
+  color: var(--hover);
+  background: var(--white); /* Tombol get started jadi berubah warna ketika mouse ada di tombolnya (tidak di klik) */
+  font-weight: 600;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: var(--white); /* Dropdown */
+  box-shadow: 0px 0px 30px var(--bayangan-dropdown); /* Bayangan dropdown */
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px; /* Padding dropdown */
+  font-size: 14px; /* Ukuran dari tulisan yang ada di dropdown */
+  text-transform: none;
+  font-weight: 500; /*  Ketebalan dari tulisan yang ada di dropdown */
+  color: var(--hover); /* Waarna tulisan dari drop down */
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px; /* Ukuran panah kanan yang ada di dalam dropdown */
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: var(--primary-color); /* Perubahan warna jika tulisan di dalam dropdown ada mouse di atasnya */
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/* [TO DO - karena ini tampilan untuk mobile] Responsive - Ini adalah tampilan jika websitenya digunakan pada mobile atau handphone/hp
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: var(--white);
+  font-size: 24px; /* Ukuran garis 3 buat nampilin menu */
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: var(--white); /* Warna garis 3 */
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--primary-color);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 0 0;
+  border-radius: 10px;
+  background-color: var(--white);
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: var(--hover);
+  margin: 10px;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: var(--hover-active);
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 10px;
+  color: var(--hover); /* Warna tombol masuk pada nav bar si, di desktop ga keliatan */
+}
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: var(--white);
+  box-shadow: 0px 0px 30px var(--bayangan-dropdown);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+  color: var(--primary-color);
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------
+# Hero Section - Kayak introduction website, berada di bagian paling atas website 
+--------------------------------------------------------------------------------------------------------------------*/
+
+#hero {
+  width: 100%;
+  background: url("../img/hero-bg.jpg"); /* Background image pada hero [akan tampil jika background warna dihapus]*/
+  position: relative;
+  padding: 102px 0 0 0;
+}
+
+#hero:before {
+  content: "";
+  background: var(--primary-color); /* Hapus code ini jika menginginkan background yg ada gambarnya muncul */
+  background-image: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  background: #4dcaf0;
+  background: -webkit-radial-gradient(right, #4dcaf0, #274a6d);
+  background: -moz-radial-gradient(right, #4dcaf0, #274a6d);
+  background: radial-gradient(to left, #4dcaf0, #274a6d);
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: var(--white);
+}
+
+#hero h1 span {
+  color: var(--tion); /* Tulisan Judul tion */
+}
+
+#hero h2 {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+#hero .tion {
+  color: var(--tion); /* Tulisan Judul tion */
+  font-weight: 500;
+}
+#hero h2 span {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+#hero .btn-get-started {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 20px;
+  transition: 0.5s;
+  margin-right: 5px;
+  color: var(--white);
+  margin-bottom: 5px;
+  border: 3px solid var(--border-button);
+}
+
+#hero .btn-get-started:hover {
+  color: var(--hover);
+  background: var(--white);
+}
+
+#hero .shape {
+  background-color: var(--white);
+  border-radius: 41% 59% 39% 61% / 54% 36% 64% 46%;
+  /* filter: blur(4px); */
+}
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  #hero {
+    padding-top: 80px;
+  }
+
+  #hero .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+
+  #hero .hero-img {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #hero .hero-img img {
+    max-width: 50%;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+.blob {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  #hero .hero-img img {
+    width: 80%;
+  }
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.seveg {
+  position: absolute;
+  width: 750px;
+}
+.seveg:nth-child(2) {
+  filter: blur(40px);
+}
+
+.hero-waves {
+  display: block;
+  margin-top: 60px;
+  width: 100%;
+  height: 60px;
+  z-index: 5;
+  position: relative;
+}
+
+.wave1 use {
+  -webkit-animation: move-forever1 10s linear infinite;
+  animation: move-forever1 10s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.wave2 use {
+  -webkit-animation: move-forever2 8s linear infinite;
+  animation: move-forever2 8s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.wave3 use {
+  -webkit-animation: move-forever3 6s linear infinite;
+  animation: move-forever3 6s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+@-webkit-keyframes move-forever1 {
+  0% {
+    transform: translate(85px, 0%);
+  }
+
+  100% {
+    transform: translate(-90px, 0%);
+  }
+}
+
+@keyframes move-forever1 {
+  0% {
+    transform: translate(85px, 0%);
+  }
+
+  100% {
+    transform: translate(-90px, 0%);
+  }
+}
+
+@-webkit-keyframes move-forever2 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever2 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@-webkit-keyframes move-forever3 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever3 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-bg {
+  background-color: var(--section-bg);
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 0px;
+  position: relative;
+  color: var(--text-p);
+}
+
+.section-title h2::before,
+.section-title h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--biru-muda); /* Garis pada judul secction */
+  display: inline-block;
+}
+
+.section-title h2::before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h2::after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title p {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  position: relative;
+  color: var(--text-p);
+}
+
+.section-title p::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 640px;
+  height: 1px;
+  background: var(--line-section);
+  bottom: 1px;
+  left: calc(50% - 320px);
+}
+
+/*--------------------------------------------------------------
+# Lomba
+--------------------------------------------------------------*/
+
+/* Search */
+
+.search {
+  display: flex;
+  padding: 16px 0px;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.search h1 {
+  letter-spacing: 3px;
+  display: inline-block;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+.search input {
+  width: 50%;
+  padding: 5px 16px;
+  background: transparent;
+  border: 1px solid #000;
+  font-size: 16px;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  outline: none;
+  border-radius: 5px;
+  font-family: "Jost", sans-serif;
+}
+
+.search input::placeholder {
+  color: var(--text-p);
+  font-weight: 500;
+}
+/* ------------------------------ */
+.portfolio .portfolio-flters {
+  padding: 0 0 20px 0;
+  margin: 0 auto;
+  list-style: none;
+  text-align: left;
+}
+
+.portfolio .portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 10px;
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-flters li:hover,
+.portfolio .portfolio-flters li.filter-active {
+  color: var(--primary-color);
+}
+
+.portfolio .portfolio-flters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-flters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.portfolio .portfolio-wrap {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  width: 960px;
+  height: 1280px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  padding: 15px 15px;
+  background-color: #fff;
+  position: relative;
+  border-top: 1px solid #f3f3f3;
+  z-index: 2;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 0px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 a {
+  color: var(--text-p);
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 a:hover {
+  color: var(--hover-icon);
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 0px;
+  color: var(--desc);
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.1);
+}
+
+.entry-meta {
+  margin-bottom: 15px;
+  color: #4084fd;
+}
+
+.entry-meta ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-meta ul li + li {
+  padding-left: 20px;
+}
+
+.entry-meta i {
+  font-size: 16px;
+  margin-right: 8px;
+  line-height: 0;
+}
+
+.entry-meta a {
+  color: #777777;
+  font-size: 14px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.u_poster {
+  width: 200;
+  height: 200;
+  position: relative;
+  justify-items: center;
+}
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--hover-icon);
+}
+
+.portfolio-details .swiper-button-prev,
+.portfolio-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.portfolio-details .swiper-button-prev:after,
+.portfolio-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.portfolio-details .swiper-button-prev:hover:after,
+.portfolio-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 575px) {
+  .portfolio-details .swiper-button-prev,
+  .portfolio-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--hover-icon);
+  left: 0;
+  bottom: 0;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+.portfolio-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #9c9c9c;
+  font-size: 12px;
+}
+
+.portfolio-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--hover-icon);
+  color: #fff;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-info .btn-visit:hover {
+  background: #009d8b;
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: white;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid #fff;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: #009d8b;
+  font-size: 26px;
+  line-height: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.portfolio-details .portfolio-description .testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
+}
+
+.margintop {
+  margin-top: 8px;
+}
+
+.margintopinput {
+  margin-top: 8px;
+  border-radius: 40px;
+}
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Recent Blog Posts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  font-size: 14px;
+  background: var(--primary-color);
+}
+
+#footer .footer-top {
+  padding: 45px 0 10px 0;
+  background: var(--white); /* background footer top */
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h3 {
+  font-size: 28px;
+  margin: 0 0 10px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: var(--text-p); /* warna tulisan lombation pada footer */
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Jost", sans-serif;
+  color: var(--footer-p); /* Warna text p pada footer */
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-p); /* Warna pada judul footer (klasifikasi, link tautan, kontak kami) */
+  position: relative;
+  padding-bottom: 12px;
+  padding-top: 4px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 0px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: var(--primary-color); /* Panah kanan */
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: var(--footer-p); /* warna pada List footer */
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: var(--hover-icon); /* hover tulisan list footer */
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: var(--primary-color); /* Warna icon jaringan sosial */
+  color: var(--white);
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: var(--hover-icon); /* Hover pada tulisan jaringan sosial */
+  color: var(--white);
+  text-decoration: none;
+}
+
+#footer .footer-bottom {
+  padding-top: 22px;
+  padding-bottom: 21px;
+  color: var(--white); /* Warna tulisan footer bottom */
+}
+
+#footer .copyright {
+  float: left;
+}
+
+#footer .credits {
+  float: right;
+  font-size: 14px;
+}
+
+#footer .credits a {
+  transition: 0.3s;
+  color: var(--white); /*Warna tulisan tim pengembang pada footer*/
+}
+#footer .credits a:hover {
+  transition: 0.3s;
+  color: var(--hover-icon); /*Warna tulisan tim pengembang pada footer*/
+}
+@media (max-width: 768px) {
+  #footer .footer-bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #footer .copyright,
+  #footer .credits {
+    text-align: center;
+    float: none;
+  }
+
+  #footer .credits {
+    padding-top: 4px;
+  }
+}
